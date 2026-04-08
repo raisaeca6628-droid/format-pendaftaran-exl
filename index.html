@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Exaltheon</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        :root {
+            --biru-muda: #e0f2fe;
+            --biru-utama: #7dd3fc;
+            --biru-tua: #0369a1;
+            --putih: #ffffff;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--biru-muda);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 15px;
+        }
+
+        .container {
+            background: var(--putih);
+            width: 100%;
+            max-width: 450px; /* Ukuran lebih lebar */
+            padding: 40px; /* Padding lebih besar */
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(125, 211, 252, 0.4);
+            border: 4px solid var(--biru-utama);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: var(--biru-tua);
+            font-size: 26px; /* Font lebih gede */
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--biru-tua);
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 15px; /* Kotak input lebih lega */
+            border: 2px solid var(--biru-utama);
+            border-radius: 15px;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+            background-color: #fafafa;
+        }
+
+        input:focus {
+            border-color: var(--biru-tua);
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(3, 105, 161, 0.1);
+        }
+
+        button {
+            width: 100%;
+            padding: 18px;
+            background-color: var(--biru-utama);
+            border: none;
+            border-radius: 15px;
+            color: var(--biru-tua);
+            font-weight: bold;
+            font-size: 18px; /* Tombol lebih gede */
+            cursor: pointer;
+            transition: 0.4s;
+            margin-top: 15px;
+            box-shadow: 0 5px 15px rgba(125, 211, 252, 0.5);
+        }
+
+        button:hover {
+            background-color: var(--biru-tua);
+            color: white;
+            transform: scale(1.02);
+        }
+
+        ::placeholder {
+            color: #ccc;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>✦ 𝐄𝐗𝐀𝐋𝐓𝐇𝐄𝐎𝐍 ✦</h1>
+    </div>
+
+    <div class="form-group">
+        <label>Nama Panggilan:</label>
+        <input type="text" id="panggilan" placeholder="nama kamu">
+    </div>
+
+    <div class="form-group">
+        <label>Nickname FF:</label>
+        <input type="text" id="nickname" placeholder="nama ff kamu">
+    </div>
+
+    <div class="form-group">
+        <label>ID FF:</label>
+        <input type="number" id="idff" placeholder="id kamu">
+    </div>
+
+    <div class="form-group">
+        <label>Usia:</label>
+        <input type="number" id="usia" placeholder="umur kamu">
+    </div>
+
+    <div class="form-group">
+        <label>Level Akun:</label>
+        <input type="number" id="level" placeholder="lvl kamu">
+    </div>
+
+    <div class="form-group">
+        <label>Gender:</label>
+        <select id="gender">
+            <option value="Perempuan">Perempuan</option>
+            <option value="Laki-laki">Laki-laki</option>
+        </select>
+    </div>
+
+    <button onclick="kirimWA()">
+        DAFTAR SEKARANG ✨
+    </button>
+</div>
+
+<script>
+    function kirimWA() {
+        const noWA = "6285233008359";
+        
+        const panggilan = document.getElementById('panggilan').value;
+        const nickname = document.getElementById('nickname').value;
+        const idff = document.getElementById('idff').value;
+        const usia = document.getElementById('usia').value;
+        const level = document.getElementById('level').value;
+        const gender = document.getElementById('gender').value;
+
+        if (!panggilan || !nickname) {
+            alert("Nama & Nickname jangan dikosongin ya cantik/ganteng! 🌸");
+            return;
+        }
+
+        const teks = `i✦ 𝐅𝐎𝐑𝐌𝐀𝐓 𝐏𝐄𝐍𝐃𝐀𝐅𝐓𝐀𝐑𝐀𝐍 𝐄𝐗𝐀𝐋𝐓𝐇𝐄𝐎𝐍 ✦%0A` +
+                     `• 𝗡𝗮𝗺𝗮 𝗣𝗮𝗻𝗴𝗴𝗶𝗹𝗮𝗻: ${panggilan}%0A` +
+                     `• 𝗡𝗶𝗰𝗸𝗻𝗮𝗺𝗲 𝗙𝗙: ${nickname}%0A` +
+                     `• 𝗜𝗗 𝗙𝗙: ${idff}%0A` +
+                     `• 𝗨𝘀𝗶𝗮: ${usia}%0A` +
+                     `• 𝗟𝗲𝘃𝗲𝗹 𝗔𝗸𝘂𝗻: ${level}%0A` +
+                     `• *Gender*: ${gender}`;
+
+        window.open(`https://wa.me/${noWA}?text=${teks}`, '_blank');
+    }
+</script>
+
+</body>
+</html>
